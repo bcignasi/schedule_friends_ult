@@ -23,8 +23,8 @@ class View {
         <label>Importancia: <input type="range" min="0" max="100" id="importance"></label>
         <label>Periodicidad: <input type="number" min="1" id="periodicity" value="7"></label>
         <label>Notas: <textarea id="note"></textarea></label>
-        <button id="accept">Aceptar</button>
-        <button id="cancel">Cancelar</button>
+        <button id="accept" class="button">Aceptar</button>
+        <button id="cancel" class="button">Cancelar</button>
         `
         this.root.appendChild(form)
 
@@ -66,8 +66,8 @@ class View {
         <label>Importancia: <input type="range" min="0" max="100" id="importance" value="${importance}"></label>
         <label>Periodicidad: <input type="number" min="1" id="periodicity" value="${periodicity}"></label>
         <label>Notas: <textarea id="note">${note}</textarea></label>
-        <button id="accept">Aceptar</button>
-        <button id="cancel">Cancelar</button>
+        <button id="accept" class="button">Aceptar</button>
+        <button id="cancel" class="button">Cancelar</button>
         `
         this.root.appendChild(form)
 
@@ -118,6 +118,7 @@ class View {
 
             const btnEditFriend = document.createElement("button")
             btnEditFriend.id = "btnEditFriend"
+            btnEditFriend.className = "button is-small"
             btnEditFriend.textContent = "edit friend"
 
             btnEditFriend.addEventListener('click', () => {
@@ -130,7 +131,7 @@ class View {
             const idAtt = document.createAttribute("id")
             idAtt.value = "btnDelete"
             btnDelete.setAttributeNode(idAtt)
-            btnDelete.className = "friendButton"
+            btnDelete.className = "button is-small"
             btnDelete.textContent = "delete"
 
             btnDelete.addEventListener('click', () => {
@@ -141,7 +142,7 @@ class View {
 //------------------------------------------------------------------------------------- confirm btn
             const btnConfirm = document.createElement("button")
             btnConfirm.id = "btnConfirm"
-            btnConfirm.className = "friendButton"
+            btnConfirm.className = "button is-small"
             btnConfirm.textContent = "to history"
 
             btnConfirm.addEventListener("click", () => {
@@ -158,7 +159,7 @@ class View {
 
             const btnShowHistory = document.createElement("button")
             btnShowHistory.id = "showHistory"
-            btnShowHistory.className = "showBtn"
+            btnShowHistory.className = "button is-small"
             btnShowHistory.textContent = "show history"
 
             btnShowHistory.addEventListener('click', () => {
@@ -183,6 +184,7 @@ class View {
 
                         const btnDeleteEntry = document.createElement("button")
                         btnDeleteEntry.id = "btnDeleteEntry"
+                        btnDeleteEntry.className = "button is-small"
                         btnDeleteEntry.textContent = "delete entry"
 
                         btnDeleteEntry.addEventListener('click', () => {
