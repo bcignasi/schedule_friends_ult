@@ -99,10 +99,16 @@ class View {
         }
         for (const f of friends) {
             const elem = document.createElement("div")
-            elem.className = "container"
+            elem.className = "box has-background-light"
+            const elemSmallBox = document.createElement("div")
+            elemSmallBox.className = "box"
+            const elemLargeBox = document.createElement("div")
+            elemLargeBox.className = "box is-hidden"
+
+
 
             const name = document.createElement("div")
-            name.textContent = "Nombre: " + f.name
+            name.textContent = f.name
             const date = document.createElement("div")
             date.textContent = "Cita: " + f.date
             const importance = document.createElement("div")
@@ -113,6 +119,17 @@ class View {
             note.textContent = "Nota: " + f.note
             const historyBox = document.createElement("div")
             //history.textContent = "Historia: " + f.history
+
+            //----------------------------------------------------------------------------------- toggle Large Box
+
+            function toggleVisibility (element){
+
+                element.classList.toggle("is-hidden")
+            }
+
+            elemSmallBox.addEventListener("click", () =>{
+                toggleVisibility(elemLargeBox)
+            })
 
             //----------------------------------------------------------------------------------- update btn
 
@@ -214,17 +231,19 @@ class View {
 
 //-------------------------------------------------------------------------------------
 
-            elem.appendChild(name)
-            elem.appendChild(date)
-            elem.appendChild(importance)
-            elem.appendChild(periodicity)
-            elem.appendChild(note)
-            elem.appendChild(historyBox)
-            elem.appendChild(btnEditFriend)
-            elem.appendChild(btnDelete)
-            elem.appendChild(btnConfirm)
-            elem.appendChild(btnShowHistory)
+            elemSmallBox.appendChild(name)
+            elemLargeBox.appendChild(date)
+            elemLargeBox.appendChild(importance)
+            elemLargeBox.appendChild(periodicity)
+            elemLargeBox.appendChild(note)
+            elemLargeBox.appendChild(historyBox)
+            elemLargeBox.appendChild(btnEditFriend)
+            elemLargeBox.appendChild(btnDelete)
+            elemLargeBox.appendChild(btnConfirm)
+            elemLargeBox.appendChild(btnShowHistory)
 
+            elem.appendChild(elemSmallBox)
+            elem.appendChild(elemLargeBox)
             this.root.appendChild(elem)
         }
     }
