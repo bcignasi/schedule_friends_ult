@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>MVC friends</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,22 @@
     <script src="js/control.js"></script>
 
 </head>
-<body>
+<body class="section">
 <header>
-    <h1>MVC Friends</h1>
-    <nav>
-        <ul>
-            <li id="mnuNewFriend" class="button">New Friend</li>
-        </ul>
-    </nav>
+    <section class="hero">
+
+        <div class="hero-body">
+            <div class="columns is-flex is-justify-content-space-between">
+                <div class="column is-narrow">
+                    <p class="title">Contacts</p>
+                </div>
+                <div class="column is-narrow">
+                    <p id="mnuNewFriend" class="button is-small">New Friend</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </header>
 <div id="root"></div>
 <script>

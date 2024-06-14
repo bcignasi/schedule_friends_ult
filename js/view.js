@@ -99,11 +99,14 @@ class View {
         }
         for (const f of friends) {
             const elem = document.createElement("div")
-            elem.className = "box has-background-light"
+            elem.className = "box real-example-overlay"
+            elem.id = "masterBox"
             const elemSmallBox = document.createElement("div")
             elemSmallBox.className = "box"
             const elemLargeBox = document.createElement("div")
             elemLargeBox.className = "box is-hidden"
+            const elemButtonBox = document.createElement("div")
+            elemButtonBox.className = "buttons"
 
 
 
@@ -237,10 +240,11 @@ class View {
             elemLargeBox.appendChild(periodicity)
             elemLargeBox.appendChild(note)
             elemLargeBox.appendChild(historyBox)
-            elemLargeBox.appendChild(btnEditFriend)
-            elemLargeBox.appendChild(btnDelete)
-            elemLargeBox.appendChild(btnConfirm)
-            elemLargeBox.appendChild(btnShowHistory)
+            elemLargeBox.appendChild(elemButtonBox)
+            elemButtonBox.appendChild(btnEditFriend)
+            elemButtonBox.appendChild(btnDelete)
+            elemButtonBox.appendChild(btnConfirm)
+            elemButtonBox.appendChild(btnShowHistory)
 
             elem.appendChild(elemSmallBox)
             elem.appendChild(elemLargeBox)
